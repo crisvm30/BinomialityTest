@@ -142,7 +142,7 @@ computeODECoeff := proc(network::list)
 					for b from 1 to nops(ODEcoeffList[specie]) while notFound do
 						if ODEcoeffList[specie][b][1] = i then
 							local auxList :=  ODEcoeffList[specie][b];
-							 ODEcoeffList[specie] := subsop(b=NULL,hashMap[specie]);
+							 ODEcoeffList[specie] := subsop(b=NULL,ODEcoeffList[specie]);
 							ODEcoeffList[specie] := [op(ODEcoeffList[specie]),[auxList[1],auxList[2]+coef] ];
 							notFound := false
 						end if;
